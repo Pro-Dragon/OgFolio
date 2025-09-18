@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    font-family: 'Osake' , Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'Osake';
+  src: url('./fonts/Osake.ttf') format('ttf'),
+       url('./fonts/Osake.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.nav-bar {
+    height: 80px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.192);
+}
+h1{
+    font-size: 200px;
+    color: rgb(186, 2, 2);
+    text-align: center;
+}
