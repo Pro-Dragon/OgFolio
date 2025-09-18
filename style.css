@@ -4,8 +4,7 @@
 }
 @font-face {
   font-family: 'Osake';
-  src: url('./fonts/Osake.ttf') format('ttf'),
-       url('./fonts/Osake.ttf') format('ttf');
+  src: url('./fonts/Osake.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
