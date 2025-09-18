@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    font-family: 'Osake';
+}
+
+.nav-bar {
+    height: 80px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.192);
+}
+h1{
+    font-size: 200px;
+    color: rgb(186, 2, 2);
+    text-align: center;
+}
