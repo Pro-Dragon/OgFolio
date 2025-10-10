@@ -1,24 +1,233 @@
 * {
     margin: 0;
-    font-family: 'Osake' , Arial, Helvetica, sans-serif;
 }
-@font-face {
-  font-family: 'Osake';
-  src: url('./fonts/Osake.ttf') format('ttf'),
-       url('./fonts/Osake.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
+html {
+  scroll-behavior: smooth;
 }
 
-
-
-.nav-bar {
-    height: 80px;
+.first_page {
+    height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.192);
+    background-color: red;
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
-h1{
-    font-size: 200px;
-    color: rgb(186, 2, 2);
-    text-align: center;
+.layers-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.corners {
+    height: 100svh;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50% , rgba(0, 0, 0, 0.7));
+}
+.cursor-effect {
+    pointer-events: none;
+    transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.layer1 {
+    position: absolute;
+    width: 130%;
+    height: 130;
+    top: -20%;
+    left: -15%;
+    z-index: 0;
+}
+.fog1 {
+    z-index: 1;
+    width: 100vw;
+    height: 15vh;
+    top: 25vh;
+    left: 0;
+    object-fit: cover;
+}
+.layer2 {
+    position: absolute;
+    object-fit: cover;
+    z-index: 2;
+    width: 130%;
+    height: 300px;
+    top: calc(50% - 280px);
+    left: -15%;
+}
+.layer3 {
+    position: absolute;
+    z-index: 3;
+    width: 130%;
+    height: 850px;
+    top: calc(50% - 450px);
+    left: -15%;
+}
+.layer4 {
+    position: absolute;
+    z-index: 4;
+    object-fit: fill;
+    height: 400px;
+    width: 100%;
+    left: 3%;
+    top: calc(50% - 100px);
+    filter:contrast(200%);
+}
+.layer5 {
+    position: absolute;
+    z-index: 4;
+    object-fit: fill;
+    height: 90%;
+    width: 25%;
+    left : -2%;
+    top: 8%;
+}
+.layer6 {
+    position: absolute;
+    z-index: 4;
+    object-fit: fill;
+    height: 30%;
+    width: 20%;
+    right : -2%;
+    top: 50%;
+}
+.second-page {
+    height: 400vh;
+    width: 100%;
+    z-index: 6;
+    border: 1px solid white;
+}
+.Details {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    z-index: 6;
+}
+.hero {
+    z-index: 6;
+    position: sticky;
+    left: calc(50% - 100px);
+    top: calc(100% - 300px);
+    animation: hero-animation both;
+    animation-timeline: view(5% 5%);
+}
+.about-me{
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    border: 1px solid white;
+    font-size: 50px;
+    z-index: 6;
+    top: 0;
+    color: red;
+}
+@keyframes hero-animation {
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    10% {opacity: 0.5;}
+    50%{
+        opacity: 1;
+        transform: scale(4);
+    }
+    70% {
+        opacity: 0;transform: scale(4);
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.samurai {
+    height: 100svh;
+    width: 50%;
+    position: sticky;
+    top: 0;
+    left: 100%;
+    z-index: 0;
+    animation: samurai both;
+    animation-timeline: view(100% 100%);
+}
+@keyframes samurai {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.code-logo1:hover, .code-logo2:hover, .code-logo3:hover, .code-logo4:hover, .code-logo5:hover {
+    transform: scale(1.5);
+    transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.skills {
+    height: 200%;
+    width: 100%;
+    position: absolute;
+    z-index: 7;
+    background-color: black;
+}
+.card1, .card2, .card3, .card4, .card5 {
+    height: 150px;
+    width: 400px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    position: sticky;
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center;
+    flex-direction: row;
+    opacity: 0;
+}
+.card1 {
+    animation: card both;
+    animation-timeline: view(100% 0%);
+}
+.card2 {
+    animation: card both;
+    animation-timeline: view(100% 10%);
+}
+.card3 {
+    animation: card both;
+    animation-timeline: view(100% 10%);
+}
+.card4 {
+    animation: card both;
+    animation-timeline: view(100% 10%);
+}
+.card5 {
+    animation: card both;
+    animation-timeline: view(100% 10%);
+}
+@keyframes card {
+    34%{opacity: 0;}
+    35% {
+        opacity: 1;
+    }
+    40% {
+        transform: scale(1.5)
+    }
+    60% {
+        transform: scale(0);
+        transform: translateY(800px);
+        opacity: 1;
+    }
+}
+@media (max-width: 900px) {
+    .layers-container, .first_page {
+        height: 60vh;
+    }
+    .layer2, .layer3, .layer4 {
+        height: 40vh;
+    }
+    .fog1 {
+        height: 8vh;
+        top: 15vh;
+    }
 }
